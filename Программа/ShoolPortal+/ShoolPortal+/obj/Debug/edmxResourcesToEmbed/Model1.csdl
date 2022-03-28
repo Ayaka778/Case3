@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Grades_Students">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_Student" Type="Int32" />
+    <Property Name="Algebra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Geometry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Literature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_education" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Russian_language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Work_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Grades_Students_Students" FromRole="Grades_Students" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="id_Student" />
+    </Key>
+    <Property Name="id_Student" Type="Int32" Nullable="false" />
+    <Property Name="Last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="First_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Group_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Number_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Street_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Year_of_admission" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="College_ID_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Grades_Students" Relationship="Self.FK_Grades_Students_Students" FromRole="Students" ToRole="Grades_Students" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Grades_Students_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+    <End Role="Grades_Students" Type="Self.Grades_Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id_Student" />
+      </Principal>
+      <Dependent Role="Grades_Students">
+        <PropertyRef Name="id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ShoolEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Grades_Students" EntityType="Self.Grades_Students" />
+    <EntitySet Name="Students" EntityType="Self.Students" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Grades_Students_Students" Association="Self.FK_Grades_Students_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Grades_Students" EntitySet="Grades_Students" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="ShoolPortal_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoolPortal_"
+        mc:Ignorable="d"
+        Title="Форма для проверки всех функций" Height="470" Width="723.268" MaxWidth="800.068" MaxHeight="433.649" MinWidth="800.068" MinHeight="433.649">
+    <Grid Margin="0,0,-6,-43">
+        <DataGrid x:Name="dg1" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="376" VerticalAlignment="Top" Width="631" Margin="4,11,0,0" CanUserAddRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Width="15" FontSize="15" Binding="{Binding id_Student}"/>
+                <DataGridTextColumn Header="Фамилия" Width="59" FontSize="15" Binding="{Binding Last_name}"/>
+                <DataGridTextColumn Header="Имя" Width="60" FontSize="15" Binding="{Binding First_name}"/>
+                <DataGridTextColumn Header="Отчество" Width="65" FontSize="15" Binding="{Binding Middle_name}"/>
+                <DataGridTextColumn Header="Группа" Width="58" FontSize="15" Binding="{Binding Group_}"/>
+                <DataGridTextColumn Header="Номер телефона" Width="102" FontSize="15" Binding="{Binding Number_phone}"/>
+                <DataGridTextColumn Header="Почта" Width="55" FontSize="15" Binding="{Binding Mail}"/>
+                <DataGridTextColumn Header="Улица" Width="60" FontSize="15" Binding="{Binding Street_address}"/>
+                <DataGridTextColumn Header="Поступил" Width="69" FontSize="15" Binding="{Binding Year_of_admission}"/>
+                <DataGridTextColumn Header="Студен. билет" Width="*" FontSize="15" Binding="{Binding College_ID_number}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Таблица студентов" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="640,11,0,0" Height="54" Click="Button_Click_1"/>
+        <Button Content="Оценки студентов" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="640,90,0,0" Height="57" Click="Button_Click_2"/>
+        <Button Content="Генерация оценок и&#xD;&#xA;      посещаемости" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="640,174,0,0" Height="60" Click="Button_Click"/>
+        <Button Content="Вычисления" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="640,259,0,0" Height="53" Click="Button_Click_3"/>
+        <Button Content="          Генирация &#xD;&#xA;             номера &#xD;&#xA;студенческого билета" HorizontalAlignment="Left" Margin="640,336,0,0" VerticalAlignment="Top" Width="130" Click="Button_Click_4"/>
+        <DataGrid x:Name="dg2" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="376" VerticalAlignment="Top" Width="631" Margin="4,11,0,0" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" FontSize="15" Width="30" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="Дата" FontSize="15" Width="80" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="id Студента" FontSize="15" Width="72" Binding="{Binding id_Student}"/>
+                <DataGridTextColumn Header="Алгебра" FontSize="15" Width="55" Binding="{Binding Algebra}"/>
+                <DataGridTextColumn Header="Геометрия" FontSize="15" Width="70" Binding="{Binding Geometry}"/>
+                <DataGridTextColumn Header="Литература" FontSize="15" Width="74" Binding="{Binding Literature}"/>
+                <DataGridTextColumn Header="Физкультура" FontSize="15" Width="78" Binding="{Binding Physical_education}"/>
+                <DataGridTextColumn Header="Русский язык" FontSize="15" Width="90" Binding="{Binding Russian_language}"/>
+                <DataGridTextColumn Header="Технология" FontSize="15" Width="*" Binding="{Binding Work_}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="ShoolPortal_.Sozdatnumberstud"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoolPortal_"
+        mc:Ignorable="d" Height="255.956" Width="388.137" ResizeMode="NoResize" Title="Вычисление среднего арифметического значения">
+    <Grid Margin="0,0,-7,-19.8">
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ф.И.О. Студента:" VerticalAlignment="Top" Margin="14,14,0,0" FontSize="16"/>
+        <ComboBox x:Name="cb1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="224" Margin="141,14,0,0" Height="26"/>
+        <Button x:Name="bt1" Content="Внести" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="35,174,0,0" Height="35" FontSize="16" Click="Button1_Click"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="221,174,0,0" Height="35" FontSize="16" Click="Button_Click_1"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Дата поступления студента:" VerticalAlignment="Top" Margin="14,54,0,0" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Группа студента:" VerticalAlignment="Top" Margin="14,94,0,0" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Сгенерированный код:" VerticalAlignment="Top" Margin="14,130,0,0" FontSize="16"/>
+        <TextBox x:Name="tb3" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="167" Margin="191,132,0,0" IsEnabled="False"/>
+        <TextBox x:Name="tb2" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Margin="141,98,0,0" IsEnabled="False"/>
+        <TextBox x:Name="tb1" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" Margin="221,57,0,0" IsEnabled="False"/>
+        <Button x:Name="bt2" Content="Сгенерировать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="35,174,0,0" Height="35" FontSize="16" Click="Button_Click"/>
+    </Grid>
+</Window>
